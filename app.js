@@ -8,11 +8,6 @@ angular.module('instaCity', ['ngRoute'])
         controller: 'MainCtrl'
       })
 
-      .when('/favorites', {
-        templateUrl: 'templates/favorites.html',
-        controller: 'FavoritesCtrl'
-      });
-
     $locationProvider.html5Mode({
       enabled: true,
       requireBase: false
@@ -22,15 +17,27 @@ angular.module('instaCity', ['ngRoute'])
   .controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
     $scope.photos = [];
 
-    $scope.searchTag = function () {
-      var tag = $scope.tag.replace(/\s+/, '');
-      var url = 'https://api.instagram.com/v1/tags/' + tag + '/media/recent?client_id=d8d0d6b44249490bbde6eee4d1968dac&callback=JSON_CALLBACK';
+    $scope.searchCity = function () {
+      var city = $scope.city.replace(/\s+/, '');
+      var url = 'https://api.instagram.com/v1/tags/' + city + '/media/recent?count=8&client_id=c54ba92f2d0847478489f3f2d58d088b&callback=JSON_CALLBACK';
+      var weatherUrl = "http://api.openweathermap.org/data/2.5/weather?mode=json&cnt=7&units=imperial&callback=JSON_CALLBACK&q="  + city  ;
       $http.jsonp(url)
         .then(function (response) {
           console.log(response.data.data);
-          $scope.tag = '';
+          $scope.currentCity = $scope.city;
+          $scope.city = '';
           $scope.photos = response.data.data;
         });
+      $http.jsonp(weatherUrl)
+        .then(function (response) {
+          $scope.city = '';
+          $scope.weather = response.data;
+          $scope.main = response.data.weather[0].description;
+          console.log($scope.main);  
+          // console.log($scope.weather);
+        });
+
+
     };
 
     $scope.savePhoto = function (photo) {
@@ -57,3 +64,9 @@ angular.module('instaCity', ['ngRoute'])
       $scope.favorites = JSON.parse(localStorage.photos);
     }
   }]);
+
+
+
+
+
+

@@ -1,14 +1,20 @@
-<h3>search #tags</h3>
-<form ng-submit="searchTag()" class="form-inline">
+<h3>Enter City</h3>
+<form ng-submit="searchCity()" class="form-inline">
   <div class="form-group">
-    <input type="text" ng-model="tag" class="form-control" placeholder="type any tag name">
+    <input type="text" ng-model="city" class="form-control" placeholder="Type City Name">
   </div>
   <input type="submit" value="Search" class="btn btn-primary">
 </form>
 <hr>
-<p><a href="/favorites">view favorites</a></p>
 <br>
+<div class="row" ng-show="weather">
+  <legend>{{ main }} (Temp :{{ weather.main.temp }} &deg; F)</legend>
+    
+
+</div>
+
 <div class="row" ng-show="photos.length > 0">
+  <h3>People around {{ currentCity }} </h3>
   <div class="col-md-3 col-sm-4" ng-repeat="photo in photos">
     <div class="thumbnail">
       <img ng-src="{{photo.images.standard_resolution.url}}">
@@ -20,7 +26,7 @@
           <ng-pluralize count="{{photo.likes.count}}" when="{'one': '1 like', 'other': '{} likes'}"></ng-pluralize>
         </span>
       </p>
-      <p><a href="javascript:void(0)" ng-click="savePhoto(photo)">Save</a></p>
+      <!-- <p><a href="javascript:void(0)" ng-click="savePhoto(photo)">Save</a></p> -->
     </div>
   </div>
 </div>
