@@ -1,0 +1,23 @@
+body{
+	background-color: black;
+}
+h1{
+	color: red;
+}
+#search-bar{
+	width: 400px;
+	margin: 0 auto;
+	opacity: .4;
+	background-color: #2E2E2E;
+	color: white;
+}
+#weather{
+	width: 400px;
+	margin: 0 auto;
+	opacity: .4;
+	background-color: #2E2E2E;
+	color: white;
+}
+#search{
+	text-align: center;
+}

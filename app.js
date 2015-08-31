@@ -19,12 +19,14 @@ angular.module('instaCity', ['ngRoute'])
 
     $scope.searchCity = function () {
       var city = $scope.city.replace(/\s+/, '');
-      var url = 'https://api.instagram.com/v1/tags/' + city + '/media/recent?count=8&client_id=c54ba92f2d0847478489f3f2d58d088b&callback=JSON_CALLBACK';
+      $scope.currentCity = $scope.city;
+      console.log($scope.currentCity);
+      var url = 'https://api.instagram.com/v1/tags/' + city + '/media/recent?count=10&client_id=c54ba92f2d0847478489f3f2d58d088b&callback=JSON_CALLBACK';
       var weatherUrl = "http://api.openweathermap.org/data/2.5/weather?mode=json&cnt=7&units=imperial&callback=JSON_CALLBACK&q="  + city  ;
       $http.jsonp(url)
         .then(function (response) {
-          console.log(response.data.data);
-          $scope.currentCity = $scope.city;
+          console.log(response.data.data);       
+          // console.log($scope.currentCity);
           $scope.city = '';
           $scope.photos = response.data.data;
         });
@@ -33,7 +35,7 @@ angular.module('instaCity', ['ngRoute'])
           $scope.city = '';
           $scope.weather = response.data;
           $scope.main = response.data.weather[0].description;
-          console.log($scope.main);  
+          // console.log($scope.main);  
           // console.log($scope.weather);
         });
 
