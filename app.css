@@ -1,23 +1,42 @@
 body{
 	background-color: black;
 }
-h1{
-	color: red;
+h1, legend{
+	color: yellow;
+	text-align: center;
+}
+h2, h3{
+	color: white;
+}
+h4{
+	color: white;
+	text-align: center;
 }
 #search-bar{
 	width: 400px;
 	margin: 0 auto;
-	opacity: .4;
+	opacity: .9;
 	background-color: #2E2E2E;
 	color: white;
 }
 #weather{
 	width: 400px;
 	margin: 0 auto;
-	opacity: .4;
+	opacity: .7;
 	background-color: #2E2E2E;
 	color: white;
 }
 #search{
 	text-align: center;
+}
+#about{
+	opacity: .4;
+	background-color: #2E2E2E;
+	margin: 0 auto;
+	float: none;
+	display: block;
+}
+#logo{
+	width: 40px;
+	margin-top: 5px;
 }

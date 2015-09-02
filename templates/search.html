@@ -1,20 +1,20 @@
 <div class="well" id="search-bar">
-<h3><center>Enter City</center></h3>
+<h3><center>Enter City...</center></h3>
 <form ng-submit="searchCity()" class="form-inline" id="search">
   <div class="form-group">
     <input type="text" ng-model="city" class="form-control" placeholder="Type City Name">
   </div>
-  <input type="submit" value="Search" class="btn btn-warning">
+  <input type="submit" value="Search" class="btn btn-danger">
 </div>
 <hr>
 <br>
 <div class="well row" ng-show="weather" id="weather">  
-  <h3>{{ main }} in {{ currentCity }} </h3>
-  <h2> {{ weather.main.temp }} &deg; F</h2>    
+  <h3><center>'{{ main }} in {{ currentCity }} '</center></h3>
+  <h2><center> {{ weather.main.temp }} &deg; F</center></h2>    
 </div>
 
 <div class="row" ng-show="photos.length > 0">
-  <h3>People around {{ currentCity }} </h3>
+  <h3><center>People around {{ currentCity }} </center></h3>
   <div class="col-md-3 col-sm-4" ng-repeat="photo in photos">
     <div class="thumbnail">
       <img ng-src="{{photo.images.standard_resolution.url}}">
