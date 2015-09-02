@@ -25,7 +25,7 @@ angular.module('instaCity', ['ngRoute'])
       var city = $scope.city.replace(/\s+/, '');
       $scope.currentCity = $scope.city;
       console.log($scope.currentCity);
-      var url = 'https://api.instagram.com/v1/tags/' + city + '/media/recent?count=10&client_id=c54ba92f2d0847478489f3f2d58d088b&callback=JSON_CALLBACK';
+      var url = 'https://api.instagram.com/v1/tags/' + city + '/media/recent?count=12&client_id=c54ba92f2d0847478489f3f2d58d088b&callback=JSON_CALLBACK';
       var weatherUrl = "http://api.openweathermap.org/data/2.5/weather?mode=json&cnt=7&units=imperial&callback=JSON_CALLBACK&q="  + city  ;
       $http.jsonp(url)
         .then(function (response) {
