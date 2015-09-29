@@ -1,0 +1,25 @@
+{
+  "name": "instacity",
+  "version": "1.0.0",
+  "description": "app that gives you current city weather and gives you instagram posts from that city",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sahash182/instaCity.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sahash182/instaCity/issues"
+  },
+  "homepage": "https://github.com/sahash182/instaCity#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "mongoose": "^4.1.9"
+  }
+}
