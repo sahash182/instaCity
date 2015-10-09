@@ -1,0 +1,1 @@
+This is a really simple app where you can type in your city name and get the current weather of that city and some instagram posts of the people around that city.

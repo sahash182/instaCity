@@ -6,8 +6,8 @@ angular.module('instaCity', ['ngRoute'])
       .when('/', {
         templateUrl: 'templates/search.html',
         controller: 'MainCtrl'
-      });
-    $routeProvider
+      })
+
       .when('/about',{
         templateUrl: 'templates/about.html',
       })
@@ -49,7 +49,7 @@ angular.module('instaCity', ['ngRoute'])
     $scope.savePhoto = function (photo) {
       // check if localStorage.photos doesn't exist yet
       if (!localStorage.photos) {
-        localStorage.photos = JSON.stringify([]);
+        localStorage.photos = JSON.strinimgy([]);
       }
 
       // get existing favorites from localStorage.photos
@@ -59,7 +59,7 @@ angular.module('instaCity', ['ngRoute'])
       allPhotos.push(photo);
 
       // reset localStorage.photos to updated array of all photos
-      localStorage.photos = JSON.stringify(allPhotos);
+      localStorage.photos = JSON.strinimgy(allPhotos);
     };
   }])
 
@@ -69,7 +69,11 @@ angular.module('instaCity', ['ngRoute'])
     } else {
       $scope.favorites = JSON.parse(localStorage.photos);
     }
-  }]);
+  }])
+
+
+;
+
 
 
 
